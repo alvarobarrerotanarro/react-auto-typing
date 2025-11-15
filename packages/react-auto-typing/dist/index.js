@@ -1,4 +1,4 @@
-export function greet() {
-    return "hell world !";
-}
+import TypingTextDefault from "./TypingText.js";
+export { useTextAnimation } from "./hook.js";
+export const TypingText = TypingTextDefault;
 //# sourceMappingURL=index.js.map

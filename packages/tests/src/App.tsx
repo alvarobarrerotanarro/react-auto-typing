@@ -3,12 +3,10 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-import { greet } from 'react-auto-typing'
+import { TypingText } from 'react-auto-typing'
 
 function App() {
   const [count, setCount] = useState(0)
-
-  console.log(greet());
 
   return (
     <>
@@ -20,7 +18,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1><TypingText duration={1000}>Vite + React</TypingText></h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
