@@ -13,5 +13,5 @@ export type TextAnimationParams = {
 };
 export declare function useTextAnimation({ target, duration }: TextAnimationParams): readonly [{
     text: string;
-}, () => void, () => void];
+}, (onanimationdone?: () => void) => void, () => void];
 //# sourceMappingURL=hook.d.ts.map

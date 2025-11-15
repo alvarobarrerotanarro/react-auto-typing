@@ -33,9 +33,9 @@ export function useTextAnimation({ target, duration }) {
      * animation in whose case, kills the previous one.
      */
     const textAnimationPlayer = useMemo(() => {
-        return () => {
+        return (onanimationdone) => {
             if (textAnimationTimeout.current == null) {
-                const animation = getAnimationInterval(textState, textDispatch, target, duration);
+                const animation = getAnimationInterval({ textState, textDispatch, target, duration, onanimationdone });
                 if (animation != null)
                     textAnimationTimeout.current = animation;
             }

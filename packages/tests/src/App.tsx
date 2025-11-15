@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -7,6 +7,13 @@ import { TypingText } from 'react-auto-typing'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [text, setText] = useState("");
+  const textarea = useRef<HTMLTextAreaElement | null>(null);
+
+  const handleTextUpdate: React.MouseEventHandler = () => {
+    if (textarea.current != null)
+      setText(textarea.current.value);
+  }
 
   return (
     <>
@@ -18,7 +25,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1><TypingText duration={1000}>Vite + React</TypingText></h1>
+      <h1><TypingText duration={500} CursorData={{ colorTheme: "dark" }}>{text}</TypingText></h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -30,6 +37,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div>
+        <textarea ref={textarea}></textarea>
+        <button onClick={handleTextUpdate}>Update</button>
+      </div>
     </>
   )
 }

@@ -18,13 +18,9 @@ function getCommonPrefix(a, b) {
 }
 /**
  * Searches the differences between the `textState.text` value, calculates weather if there are remaining characters or rather some has to go out, and finally reproduces an animation setting the reducer's state.
- * @param textState A text reducer state.
- * @param textDispatch The text reducer dispatch fn.
- * @param target The target text.
- * @param duration The duration that will take to place the target text.
- * @returns null if there is no need to play an animation (`textState.text` == `target`) and a reference to an interval in case there is a playing animation.
+ * @param params {@link GetAnimationIntervalParams}
  */
-export function getAnimationInterval(textState, textDispatch, target, duration) {
+export function getAnimationInterval({ textState, textDispatch, target, duration, onanimationdone }) {
     /**
      * 1. Get the common prefix between target and the text state.
      * 2. Remove what isn't common in the text state.
@@ -42,6 +38,11 @@ export function getAnimationInterval(textState, textDispatch, target, duration) 
         else if (pos < target.length) {
             textDispatch({ type: "push", nextChar: target[pos] });
             pos++;
+        }
+        else {
+            clearInterval(interval);
+            if (onanimationdone)
+                onanimationdone();
         }
     }, intervalTime);
     return interval;

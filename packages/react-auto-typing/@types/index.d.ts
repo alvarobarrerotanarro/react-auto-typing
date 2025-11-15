@@ -5,5 +5,7 @@ export declare const TypingText: import("react").FC<{
     style?: React.CSSProperties;
     delay?: number;
     duration?: number;
+    Cursor?: (props: Record<any, any>) => React.ReactNode;
+    CursorData?: Record<any, any>;
 }>;
 //# sourceMappingURL=index.d.ts.map
