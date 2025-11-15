@@ -1,0 +1,20 @@
+{
+  "license": "LGPL-2.0-only",
+  "author": "alvarobarrerotanarro",
+
+  "workspaces": [
+    "./packages/react-auto-typing",
+    "./packages/tests"
+  ],
+
+  "scripts": {
+    "build": "npm run build -w packages/react-auto-typing",
+    "test": "npm run dev -w packages/tests"
+  },
+
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.5",
+    "typescript": "^5.9.3"
+  }
+}
