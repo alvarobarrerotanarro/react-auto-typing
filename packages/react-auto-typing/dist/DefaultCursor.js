@@ -1,5 +1,4 @@
 import { jsx as _jsx } from "react/jsx-runtime";
-import {} from "react";
 /**
  * The TypingText component includes this default cursor component.
  */

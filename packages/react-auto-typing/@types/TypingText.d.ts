@@ -1,4 +1,4 @@
-import React, { type FC } from "react";
+import React from "react";
 type TypingTextProps = {
     children?: string;
     className?: string;
@@ -10,6 +10,6 @@ type TypingTextProps = {
 /**
  * built-in React component that implements the useTextAnimation hook and provides a delay for the animation.
  */
-declare const TypingText: FC<TypingTextProps>;
+declare const TypingText: ({ children, className, style, delay, duration, cursor }: TypingTextProps) => import("react/jsx-runtime").JSX.Element;
 export default TypingText;
 //# sourceMappingURL=TypingText.d.ts.map

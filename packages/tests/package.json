@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@alvarobarrerotanarro/react-auto-typing": "^2.0.0",
+    "@alvarobarrerotanarro/react-auto-typing": "file:../react-auto-typing",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
@@ -27,5 +27,11 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.3",
     "vite": "^7.2.2"
-  }
+  },
+  "bundleDependencies": [
+    "react",
+    "react-dom",
+    "vite",
+    "@vitejs/plugin-react-swc"
+  ]
 }

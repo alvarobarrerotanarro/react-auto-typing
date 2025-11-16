@@ -7,7 +7,7 @@ import { useTextAnimation } from "./hook.js";
 /**
  * built-in React component that implements the useTextAnimation hook and provides a delay for the animation.
  */
-const TypingText = ({ children = "", className, style, delay = 0, duration = 500, cursor = _jsx(DefaultCursor, { colorTheme: "dark" }) }) => {
+const TypingText = ({ children = "", className, style, delay = 0, duration = 500, cursor = _jsx(DefaultCursor, { colorTheme: "light" }) }) => {
     const [textState, animationPlayer, animationKiller] = useTextAnimation({ target: children, duration });
     const [hideCursor, setHideCursor] = useState(true);
     useEffect(() => {
@@ -23,6 +23,9 @@ const TypingText = ({ children = "", className, style, delay = 0, duration = 500
             animationKiller();
         };
     }, [animationPlayer]);
+    /**
+     * React 16 typescript types doesn't recognize instantiated react components as ReactNode.
+     */
     return (_jsxs("span", { style: style, className: className, children: [textState.text, !hideCursor ? cursor : null] }));
 };
 export default TypingText;

@@ -5,7 +5,6 @@
   "compilerOptions": {
     // File Layout
     "rootDir": "./src",
-
     "outDir": "./dist",
     "declarationDir": "./@types",
   }

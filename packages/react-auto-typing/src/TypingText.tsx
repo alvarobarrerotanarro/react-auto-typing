@@ -1,11 +1,9 @@
 // NextJS compatibility
 "use client"
 
-import React, { type FC, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import DefaultCursor from "./DefaultCursor.js";
 import { useTextAnimation } from "./hook.js";
-
-type CursorType = (props: Record<any, any>) => React.ReactNode;
 
 type TypingTextProps = {
   children?: string;
@@ -19,7 +17,14 @@ type TypingTextProps = {
 /**
  * built-in React component that implements the useTextAnimation hook and provides a delay for the animation.
  */
-const TypingText: FC<TypingTextProps> = ({ children = "", className, style, delay = 0, duration = 500, cursor = <DefaultCursor colorTheme="dark" /> }) => {
+const TypingText = ({
+  children = "",
+  className,
+  style,
+  delay = 0,
+  duration = 500,
+  cursor = <DefaultCursor colorTheme="light" />
+}: TypingTextProps) => {
   const [textState, animationPlayer, animationKiller] = useTextAnimation({ target: children, duration });
   const [hideCursor, setHideCursor] = useState(true);
 
@@ -38,8 +43,11 @@ const TypingText: FC<TypingTextProps> = ({ children = "", className, style, dela
     }
   }, [animationPlayer]);
 
+  /**
+   * React 16 typescript types doesn't recognize instantiated react components as ReactNode.
+   */
   return (
-    <span style={style} className={className}>{textState.text}{!hideCursor ? cursor : null}</span>
+    <span style={style as any} className={className}>{textState.text}{!hideCursor ? (cursor as any) : null}</span>
   );
 }
 
