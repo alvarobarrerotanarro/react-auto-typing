@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@alvarobarrerotanarro/react-auto-typing": "^2.0.0",
     "react": "^19.2.0",
-    "react-auto-typing": "^1.0.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {

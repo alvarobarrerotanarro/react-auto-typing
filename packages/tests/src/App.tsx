@@ -3,7 +3,29 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-import { TypingText } from 'react-auto-typing'
+import { TypingText } from "@alvarobarrerotanarro/react-auto-typing"
+
+
+function CustomCursor({ height = 12 }: { height?: number }) {
+  return (
+    <div
+      style={{
+        display: "inline-block",
+        width: "3px",
+        height: `${height}px`
+      }}
+    >
+      <div style={{
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#0099ff"
+      }}>
+      </div>
+    </div>
+  );
+}
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,7 +47,8 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1><TypingText duration={500} CursorData={{ colorTheme: "dark" }}>{text}</TypingText></h1>
+      <h1><TypingText duration={500} delay={1000}>{text}</TypingText></h1>
+      <h2><TypingText duration={1000} cursor={<CustomCursor height={20} />}>{text}</TypingText></h2>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

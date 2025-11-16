@@ -1,6 +1,9 @@
 {
-  "name": "react-auto-typing",
-  "version": "1.0.0",
+  "name": "@alvarobarrerotanarro/react-auto-typing",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "2.0.0",
   "description": "",
   "type": "module",
   "main": "./dist/index.js",
@@ -8,7 +11,20 @@
   "scripts": {
     "build": "npx tsc -b"
   },
-  "keywords": ["react", "component", "library", "typing", "animation"],
+  "files": [
+    "./dist",
+    "./@types"
+  ],
+  "keywords": [
+    "react",
+    "component",
+    "library",
+    "typing",
+    "animation"
+  ],
   "author": "alvarobarrerotanarro",
-  "license": "LGPL-2.0-only"
+  "license": "LGPL-2.0-only",
+  "peerDependencies": {
+    "react": "^19.2.0"
+  }
 }
