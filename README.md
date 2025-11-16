@@ -3,7 +3,7 @@ A lightweight React library for creating typing text animations with minimal eff
 
 It provides a ready-to-use component for quick implementation, or you can use the underlying React hook to build custom components.
 
-![](./media/demonstration.mp4)
+![react-auto-typing demonstration](./media/typing-text-demonstration.gif)
 
 ## Quick Example
 
