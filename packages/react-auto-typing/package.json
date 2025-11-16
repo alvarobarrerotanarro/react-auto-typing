@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "",
   "type": "module",
   "main": "./dist/index.js",
@@ -25,7 +25,7 @@
   "author": "alvarobarrerotanarro",
   "license": "LGPL-2.0-only",
   "peerDependencies": {
-    "react": "16.x || 17.x || 18.x || 19.x"
+    "react": ">=16.8.0 <20 || >=19.0.0-0"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",
